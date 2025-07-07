@@ -48,8 +48,8 @@ export default function Home() {
         </div>
       </nav>
 
-    <main className="max-w-xl mx-auto p-6">
-      <h1 className="text-2xl font-bold mb-4">Quote Generator</h1>
+    <main className="flex-grow max-w-xl mx-auto p-7">
+      <h1 className="text-3xl font-bold mb-4">Quote Generator</h1>
       <form onSubmit={handleSubmit} className="flex gap-2 mb-6">
         <Input
           placeholder="Enter a topic (e.g., life, success, love)"
@@ -69,6 +69,9 @@ export default function Home() {
         <p className="text-muted-foreground">No quotes yet. Try searching for: <strong>life</strong>, <strong>love</strong>, <strong>success</strong>.</p>
       )}
     </main>
+      <footer className="text-center py-6 text-gray-500 dark:text-gray-400 border-t">
+        © 2025 QuotGen. Built with using Next.js
+      </footer>
     </div>
   );
 }
