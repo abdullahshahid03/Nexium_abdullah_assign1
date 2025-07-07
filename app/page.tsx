@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Input } from "./components/ui/input";
 import { Button } from "./components/ui/button";
 import { Card, CardContent } from "./components/ui/card";
+import Link from "next/link";
 import { quotes } from "@/lib/quotes";
 
 export default function Home() {
@@ -20,6 +21,33 @@ export default function Home() {
   };
 
   return (
+      <div className="flex flex-col min-h-screen">
+    <nav className="flex items-center justify-between px-6 py-4 shadow-md bg-white dark:bg-gray-900">
+        <div className="text-xl font-bold text-blue-600">
+          <Link href="/">🧠 QuotGen</Link>
+        </div>
+        <div className="space-x-4">
+          <Link
+            href="/"
+            className="text-gray-800 dark:text-gray-100 hover:text-blue-600"
+          >
+            Home
+          </Link>
+          <Link
+            href="/about"
+            className="text-gray-800 dark:text-gray-100 hover:text-blue-600"
+          >
+            About
+          </Link>
+          <Link
+            href="/contact"
+            className="text-gray-800 dark:text-gray-100 hover:text-blue-600"
+          >
+            Contact
+          </Link>
+        </div>
+      </nav>
+
     <main className="max-w-xl mx-auto p-6">
       <h1 className="text-2xl font-bold mb-4">Quote Generator</h1>
       <form onSubmit={handleSubmit} className="flex gap-2 mb-6">
@@ -41,5 +69,6 @@ export default function Home() {
         <p className="text-muted-foreground">No quotes yet. Try searching for: <strong>life</strong>, <strong>love</strong>, <strong>success</strong>.</p>
       )}
     </main>
+    </div>
   );
 }
