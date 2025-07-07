@@ -14,7 +14,7 @@ export default function Home() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const selected = quotes
-      .filter((q) => q.topic.toLowerCase() === topic.toLowerCase())
+      .filter((q) => q.topic.toLowerCase() === topic.trim().toLowerCase())
       .slice(0, 3)
       .map((q) => q.quote);
     setFilteredQuotes(selected);
